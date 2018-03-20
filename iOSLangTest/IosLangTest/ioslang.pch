@@ -1,0 +1,7 @@
+#import "LangUtil.h"
+#import "UIImage+scale.h"
+#import "UIImageView+LK.h"
+#import "UIViewExt.h"
+
+#define IsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
+#define LOCAL_IMAGE(name) [UIImage imageNamed:name]
