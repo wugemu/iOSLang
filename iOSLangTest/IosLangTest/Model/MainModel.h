@@ -10,4 +10,5 @@
 #import "BaseLangModel.h"
 @interface MainModel : BaseLangModel
 @property(nonatomic,strong)NSString *name;
+@property(nonatomic,strong)NSMutableArray *array;
 @end

@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "MainCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UILabel *label;
     UIImageView *imgView;
+    UITableView *mTable;
 }
 @end
 
@@ -32,6 +34,14 @@
     imgView.frame=CGRectMake(50, label.bottom, 300, 250);
     [self.view addSubview:imgView];
     
+    mTable = [[UITableView alloc] initWithFrame:CGRectMake(0, imgView.bottom, 300, 100) style:UITableViewStylePlain];
+    mTable.delegate = self;
+    mTable.dataSource = self;
+    mTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    mTable.showsVerticalScrollIndicator = NO;
+    mTable.scrollEnabled = YES;
+    [self.view addSubview:mTable];
+    
 }
 
 -(void)initData{
@@ -41,10 +51,40 @@
     [presenter initData];
 }
 
+#pragma mark------tableView
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 20;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[(MainModel*)presenter.model array] count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"MainCell";
+    MainCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[MainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    cell.nameLab.text=[(MainModel*)presenter.model array][indexPath.row];
+    return cell;
+    
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     //model改变 改变View
-    label.text=[(MainModel*)presenter.model name];
-    [imgView setPicImageStr:@"http://img.zcool.cn/community/01b0d857b1a34d0000012e7e87f5eb.gif" size:imgView.size];
+    if([keyPath isEqualToString:@"name"]){
+        label.text=[(MainModel*)presenter.model name];
+        [imgView setPicImageStr:@"http://img.zcool.cn/community/01b0d857b1a34d0000012e7e87f5eb.gif" size:imgView.size];
+    }else if([keyPath isEqualToString:@"array"]){
+        [mTable reloadData];
+    }
 }
 
 

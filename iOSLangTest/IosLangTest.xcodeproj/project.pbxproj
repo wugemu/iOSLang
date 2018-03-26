@@ -62,6 +62,7 @@
 		40572FBA205923E100E3E5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40572FB8205923E100E3E5BE /* LaunchScreen.storyboard */; };
 		40572FBD205923E100E3E5BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40572FBC205923E100E3E5BE /* main.m */; };
 		40CEE369205FB65F00DFE8A6 /* LangHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CEE368205FB65F00DFE8A6 /* LangHttp.m */; };
+		40EFEE7D2068A68F0071F505 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFEE7C2068A68F0071F505 /* MainCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +183,8 @@
 		40CEE367205FB65F00DFE8A6 /* LangHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LangHttp.h; sourceTree = "<group>"; };
 		40CEE368205FB65F00DFE8A6 /* LangHttp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LangHttp.m; sourceTree = "<group>"; };
 		40CEE36A205FB6CA00DFE8A6 /* LangHttpProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LangHttpProtocol.h; sourceTree = "<group>"; };
+		40EFEE7B2068A68F0071F505 /* MainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCell.h; sourceTree = "<group>"; };
+		40EFEE7C2068A68F0071F505 /* MainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 		4007B709205A0AE0002C77E8 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				40EFEE7B2068A68F0071F505 /* MainCell.h */,
+				40EFEE7C2068A68F0071F505 /* MainCell.m */,
 				40572FB0205923E100E3E5BE /* ViewController.h */,
 				40572FB1205923E100E3E5BE /* ViewController.m */,
 			);
@@ -502,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				401EA5872060DEC70073BCAB /* UIRefreshControl+AFNetworking.m in Sources */,
+				40EFEE7D2068A68F0071F505 /* MainCell.m in Sources */,
 				401EA5222060B65C0073BCAB /* UIImage+GIF.m in Sources */,
 				401EA52A2060B65C0073BCAB /* UIView+WebCacheOperation.m in Sources */,
 				401EA54E2060BA8B0073BCAB /* UIImage+fixOrientation.m in Sources */,
