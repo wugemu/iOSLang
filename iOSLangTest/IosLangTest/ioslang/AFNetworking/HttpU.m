@@ -15,6 +15,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];//设置相应内容类型
     manager.requestSerializer.timeoutInterval = 10.f;//设置超时时长
     manager.requestSerializer.HTTPShouldHandleCookies = YES;
+//    manager.responseSerializer=[AFHTTPResponseSerializer serializer];
     
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
@@ -28,6 +29,8 @@
     
     [manager POST:urlPath parameters:mutPara success:^(NSURLSessionDataTask *task, id responseObject) {
         NSString *responseStr = [responseObject jsonEncodedKeyValueString];
+        //Unicode 编码转 UTF-8
+        //NSString *responseStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"请求返回数据===%@",responseStr);
         completedBlock(responseStr);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

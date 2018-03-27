@@ -82,6 +82,7 @@
     if([keyPath isEqualToString:@"name"]){
         label.text=[(MainModel*)presenter.model name];
         [imgView setPicImageStr:@"http://img.zcool.cn/community/01b0d857b1a34d0000012e7e87f5eb.gif" size:imgView.size];
+        [LangUtil showToastUseMBHub:self.view showText:@"测试"];
     }else if([keyPath isEqualToString:@"array"]){
         [mTable reloadData];
     }

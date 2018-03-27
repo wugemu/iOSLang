@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBProgressHUD.h"
 
 @interface LangUtil : NSObject
 + (BOOL)objectHasSetter:(NSObject *)object propertyName:(NSString *)propertyName;
 + (BOOL)objectHasGetter:(NSObject *)object propertyName:(NSString *)propertyName;
 +(NSDictionary *)parseResponse:(NSString *)responseStr;
++(void)showToastUseMBHub:(UIView *)view showText:(NSString *)text;
 @end
