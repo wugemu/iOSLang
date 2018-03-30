@@ -35,17 +35,27 @@ ViewModel 负责ViewController中的View数据源。
 2.创建Model继承BaseLangModel
 
 3.创建Presenter继承BaseLangPresenter
+
 重写方法：
+
 -(void)initModel//数据初始化或网络请求
+
 -(void)success:(NSDictionary *)dic tag:(int)tag//网络请求成功回调
+
 -(void)empty:(int)tag//网络请求为空或数据异常回调
+
 -(void)error:(int)tag//网络请求错误回调
 
 4.创建ViewController继承BaseLangVC
+
 重写方法：
+
 -(void)initView //View布局
+
 -(void)initPresenter//初始化Presenter
+
 -(void)initData//初始化页面数据
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 
 # 已整合的View
