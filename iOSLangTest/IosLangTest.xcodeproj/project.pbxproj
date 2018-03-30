@@ -10,6 +10,11 @@
 		4007B70C205A0B40002C77E8 /* BaseLangVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007B70B205A0B40002C77E8 /* BaseLangVC.m */; };
 		4007B713205A7042002C77E8 /* ViewControllPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007B712205A7042002C77E8 /* ViewControllPresenter.m */; };
 		4007B716205A7AFC002C77E8 /* BaseLangPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4007B715205A7AFC002C77E8 /* BaseLangPresenter.m */; };
+		400A34D3206DDA3100889E53 /* YYAnimationIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 400A34D1206DDA3100889E53 /* YYAnimationIndicator.m */; };
+		400A34D7206DDAAD00889E53 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400A34D5206DDAAD00889E53 /* loading@2x.png */; };
+		400A34D8206DDAAD00889E53 /* loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400A34D6206DDAAD00889E53 /* loading@3x.png */; };
+		400A34DB206DEB7C00889E53 /* langBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400A34D9206DEB7C00889E53 /* langBack@2x.png */; };
+		400A34DC206DEB7C00889E53 /* langBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 400A34DA206DEB7C00889E53 /* langBack@3x.png */; };
 		401EA5192060B65C0073BCAB /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 401EA4F22060B65B0073BCAB /* UIImage+WebP.m */; };
 		401EA51A2060B65C0073BCAB /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 401EA4F32060B65B0073BCAB /* MKAnnotationView+WebCache.m */; };
 		401EA51B2060B65C0073BCAB /* GetImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 401EA4F62060B65B0073BCAB /* GetImageSize.m */; };
@@ -73,6 +78,12 @@
 		4007B712205A7042002C77E8 /* ViewControllPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllPresenter.m; sourceTree = "<group>"; };
 		4007B714205A7AFC002C77E8 /* BaseLangPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLangPresenter.h; sourceTree = "<group>"; };
 		4007B715205A7AFC002C77E8 /* BaseLangPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLangPresenter.m; sourceTree = "<group>"; };
+		400A34D1206DDA3100889E53 /* YYAnimationIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAnimationIndicator.m; sourceTree = "<group>"; };
+		400A34D2206DDA3100889E53 /* YYAnimationIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAnimationIndicator.h; sourceTree = "<group>"; };
+		400A34D5206DDAAD00889E53 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		400A34D6206DDAAD00889E53 /* loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@3x.png"; sourceTree = "<group>"; };
+		400A34D9206DEB7C00889E53 /* langBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "langBack@2x.png"; sourceTree = "<group>"; };
+		400A34DA206DEB7C00889E53 /* langBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "langBack@3x.png"; sourceTree = "<group>"; };
 		401EA4F02060A2590073BCAB /* ioslang.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioslang.pch; sourceTree = "<group>"; };
 		401EA4F22060B65B0073BCAB /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		401EA4F32060B65B0073BCAB /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -238,6 +249,26 @@
 				40CEE36A205FB6CA00DFE8A6 /* LangHttpProtocol.h */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		400A34D0206DDA3100889E53 /* YYAnimationIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				400A34D1206DDA3100889E53 /* YYAnimationIndicator.m */,
+				400A34D2206DDA3100889E53 /* YYAnimationIndicator.h */,
+			);
+			path = YYAnimationIndicator;
+			sourceTree = "<group>";
+		};
+		400A34D4206DDAA200889E53 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				400A34D9206DEB7C00889E53 /* langBack@2x.png */,
+				400A34DA206DEB7C00889E53 /* langBack@3x.png */,
+				400A34D5206DDAAD00889E53 /* loading@2x.png */,
+				400A34D6206DDAAD00889E53 /* loading@3x.png */,
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 		401EA4F12060B65B0073BCAB /* SDWebImage */ = {
@@ -412,6 +443,8 @@
 		40572FC3205923FB00E3E5BE /* ioslang */ = {
 			isa = PBXGroup;
 			children = (
+				400A34D4206DDAA200889E53 /* res */,
+				400A34D0206DDA3100889E53 /* YYAnimationIndicator */,
 				405AF47F206A197900329335 /* MBProgressHUD */,
 				401EA5502060DEC70073BCAB /* AFNetworking */,
 				401EA52E2060B8450073BCAB /* UIKit */,
@@ -507,8 +540,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				40572FBA205923E100E3E5BE /* LaunchScreen.storyboard in Resources */,
+				400A34DB206DEB7C00889E53 /* langBack@2x.png in Resources */,
+				400A34D7206DDAAD00889E53 /* loading@2x.png in Resources */,
 				40572FB7205923E100E3E5BE /* Assets.xcassets in Resources */,
+				400A34D8206DDAAD00889E53 /* loading@3x.png in Resources */,
 				40572FB5205923E100E3E5BE /* Main.storyboard in Resources */,
+				400A34DC206DEB7C00889E53 /* langBack@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +582,7 @@
 				401EA57B2060DEC70073BCAB /* AFURLResponseSerialization.m in Sources */,
 				401EA54D2060BA8B0073BCAB /* UIViewExt.m in Sources */,
 				401EA58D2060DEC70073BCAB /* HttpU.m in Sources */,
+				400A34D3206DDA3100889E53 /* YYAnimationIndicator.m in Sources */,
 				401EA54F2060BA8B0073BCAB /* UIColor+Hex.m in Sources */,
 				401EA5882060DEC70073BCAB /* AFNetworkActivityIndicatorManager.m in Sources */,
 				401EA5272060B65C0073BCAB /* SDWebImageDownloaderOperation.m in Sources */,

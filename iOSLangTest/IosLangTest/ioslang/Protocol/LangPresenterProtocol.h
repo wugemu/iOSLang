@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @protocol LangPresenterProtocol <NSObject>
-- (void)initData;
+- (void)initModel;
 @end

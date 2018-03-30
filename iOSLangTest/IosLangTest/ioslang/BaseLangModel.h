@@ -8,5 +8,5 @@
 
 #import <Foundation/Foundation.h>
 @interface BaseLangModel : NSObject
-
+@property(nonatomic,assign)int tag;
 @end

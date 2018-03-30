@@ -15,4 +15,17 @@
     self.model=[class new];
     return self;
 }
+- (void)startAnimating
+{
+    if(self.delegate!=nil&&[self.delegate respondsToSelector:@selector(startAnimating)]){
+        [self.delegate startAnimating];
+    }
+}
+
+- (void)stopAnimating
+{
+    if(self.delegate!=nil&&[self.delegate respondsToSelector:@selector(stopAnimating)]){
+         [self.delegate stopAnimating];
+    }
+}
 @end

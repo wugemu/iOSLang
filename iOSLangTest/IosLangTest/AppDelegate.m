@@ -40,11 +40,15 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //网络状态开始实时监控
+    [LangUtil startLisNetStatue:self.window];
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    //网络状态关闭实时监控
+    [LangUtil stopLisNetStatue];
 }
 
 

@@ -10,7 +10,9 @@
 
 @implementation LangHttp
 +(void)requestPost:(NSString *)urlPath withParameters:(NSDictionary *)parameters withProtocol:delegate withTag:(int)tag{
+    [delegate startAnimating];
     [HttpU requestPost:urlPath withParameters:parameters  completedBlock:^(id responseObject) {
+        [delegate stopAnimating];
         NSDictionary *dic=[LangUtil parseResponse:responseObject];
         if (dic!=nil&&[dic isKindOfClass:[NSDictionary class]]) {
             if(delegate!=nil&&[delegate respondsToSelector:@selector(success:tag:)]){
@@ -22,6 +24,7 @@
             }
         }
     } failureBlock:^(NSError *error) {
+        [delegate stopAnimating];
         if(delegate!=nil&&[delegate respondsToSelector:@selector(error:)]){
             [delegate error:tag];
         }

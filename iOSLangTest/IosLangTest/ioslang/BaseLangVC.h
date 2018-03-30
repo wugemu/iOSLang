@@ -9,12 +9,21 @@
 #import <UIKit/UIKit.h>
 #import  <objc/runtime.h>
 #import "BaseLangPresenter.h"
+#import "YYAnimationIndicator.h"
 
 @interface BaseLangVC : UIViewController <LangVCProtocol>
 {
     BaseLangPresenter *presenter;
     NSMutableArray *OkeyList;
 }
+/*!
+ @property
+ @abstract 网络指示器
+ */
+@property (strong, nonatomic) YYAnimationIndicator *loadingView;
+-(void)initLoading;
 -(void)setObserModel:(NSString *)key;
 -(void)setObserModelForAllKey;
+-(void)setObserModelForTag;
+-(void)addTitle:(NSString *)titleStr withBackBtn:(Boolean)isHave withRightBtn:(UIButton *)rightBtn;
 @end

@@ -25,9 +25,11 @@
 }
 
 -(void)initView{
+    [self addTitle:@"测试" withBackBtn:YES withRightBtn:nil];//添加自定义标题
+    [self initLoading];//初始化网络加载动画
     label=[[UILabel alloc] init];
-    label.frame=CGRectMake(50, 50, 100, 30);
-    label.text=@"测试";
+    label.frame=CGRectMake(0, BEGIN_Y, 100, 30);
+    label.text=@"测试1111";
     [self.view addSubview:label];
     
     imgView=[[UIImageView alloc] init];
@@ -43,12 +45,11 @@
     [self.view addSubview:mTable];
     
 }
-
--(void)initData{
+-(void)initPresenter{
     presenter=[[ViewControllPresenter alloc] initWithDelegate:self class:[MainModel class]];
-    //注册model观察者
-    [self setObserModelForAllKey];
-    [presenter initData];
+}
+-(void)initData{
+    
 }
 
 #pragma mark------tableView
@@ -78,13 +79,14 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    MainModel *model=(MainModel*)presenter.model;
     //model改变 改变View
-    if([keyPath isEqualToString:@"name"]){
-        label.text=[(MainModel*)presenter.model name];
+    if(model.tag==1){
         [imgView setPicImageStr:@"http://img.zcool.cn/community/01b0d857b1a34d0000012e7e87f5eb.gif" size:imgView.size];
-        [LangUtil showToastUseMBHub:self.view showText:@"测试"];
-    }else if([keyPath isEqualToString:@"array"]){
+    }else if(model.tag==2){
         [mTable reloadData];
+    }else if(model.tag==3){
+        [LangUtil showToastUseMBHub:self.view showText:@"请求失败"];
     }
 }
 

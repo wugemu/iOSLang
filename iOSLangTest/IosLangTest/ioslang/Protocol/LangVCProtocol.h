@@ -11,5 +11,8 @@
 @protocol LangVCProtocol <NSObject>
 
 - (void)initView;
+- (void)initPresenter;
 - (void)initData;
+- (void)startAnimating;
+- (void)stopAnimating;
 @end

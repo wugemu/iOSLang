@@ -7,28 +7,33 @@
 //
 
 #import "ViewControllPresenter.h"
+#import "MainModel.h"
 @interface ViewControllPresenter ()
 {
     NSMutableArray *array;
+    MainModel *mainmodel;
 }
 @end
 @implementation ViewControllPresenter
--(void)initData{
+-(void)initModel{
     array=[[NSMutableArray alloc] init];
     [array addObject:@"111111"];
-    [self.model setValue:array forKey:@"array"];
+    mainmodel=((MainModel*)self.model);
+    mainmodel.array=array;
+    mainmodel.tag=1;
     NSMutableDictionary *params=[[NSMutableDictionary alloc]init];
-    [LangHttp requestPost:@"http://www.mihui365.com/Farm_Mobile/sysAction!queryVerNew.action" withParameters:params withProtocol:self withTag:10];
+    [LangHttp requestPost:@"http://192.168.1.1/Farm_Mobile/sysAction!queryVerNew.action" withParameters:params withProtocol:self withTag:10];
 }
 - (void)success:(NSDictionary *)dic tag:(int)tag{
-    [self.model setValue:dic[@"message"] forKey:@"name"];
+    mainmodel.name=dic[@"message"];
     [array addObject:@"22222"];
-    [self.model setValue:array forKey:@"array"];
+    mainmodel.array=array;
+    mainmodel.tag=2;
 }
 - (void)empty:(int)tag{
     
 }
 - (void)error:(int)tag{
-    
+    mainmodel.tag=3;
 }
 @end

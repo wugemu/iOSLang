@@ -2,6 +2,18 @@
 #import "UIImage+scale.h"
 #import "UIImageView+LK.h"
 #import "UIViewExt.h"
+#import "UIColor+Hex.h"
 
 #define IsNilOrNull(_ref)   (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]))
 #define LOCAL_IMAGE(name) [UIImage imageNamed:name]
+//常用高度
+#define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width //屏幕宽度 返回：float
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height//屏幕高度 返回：float
+#define Title_Height 44.0 //标题高度
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height  //iphoenX 刘海高度
+#define BEGIN_Y  (Title_Height + kStatusBarHeight)
+
+//颜色
+#define mainBlackColor [UIColor colorWithHexString:@"333333"]  //主字体色黑色
+#define mainWhiteColor [UIColor colorWithHexString:@"FFFFFF"]  //主字体色白色
+#define mainSeparationColor [UIColor colorWithHexString:@"EBEBEB"]  //分割线颜色灰色

@@ -8,6 +8,7 @@
 
 #import "LangUtil.h"
 
+static AFNetworkReachabilityManager *mgr;
 @implementation LangUtil
 + (BOOL)objectHasSetter:(NSObject *)object propertyName:(NSString *)propertyName
 {
@@ -55,6 +56,28 @@
     hud.yOffset = 10.f;
     hud.removeFromSuperViewOnHide = YES;
     [hud hide:YES afterDelay:1.5];
-    
+}
+
+//AFN判断网络
++(void)startLisNetStatue:(UIView *)view{
+    // 1.获得网络监控的管理者
+    if(mgr==nil){
+        mgr = [AFNetworkReachabilityManager sharedManager];
+    }
+    // 2.设置网络状态改变后的处理
+    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        // 当网络状态改变了,就会调用这个block
+        if(status !=AFNetworkReachabilityStatusReachableViaWWAN && status !=AFNetworkReachabilityStatusReachableViaWiFi){
+            [LangUtil showToastUseMBHub:view showText:@"亲，您的网络不可用"];
+        }
+    }];
+    // 3.开始监控
+    [mgr startMonitoring];
+}
++(void)stopLisNetStatue{
+    if(mgr!=nil){
+        [mgr stopMonitoring];
+        mgr=nil;
+    }
 }
 @end
