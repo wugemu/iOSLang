@@ -85,6 +85,10 @@ ViewModel 负责ViewController中的View数据源。
 
 动画可自行修改
 
+四.WKWebView整理
+
+1.ViewController继承BaseLangWebController，在initData方法中调用父类方法-(void)loadUrl:(NSString *)url;
+
 
 # 类说明：
 # BaseLangModel
@@ -105,5 +109,22 @@ ViewModel 负责ViewController中的View数据源。
 -(void)setObserModelForAllKey 　为model的所有Key设置监听
 
 -(void)setObserModelForTag	为model的tag设置监听，使用tag标示通知UI刷新（推荐）
+
+# LangUtil
+方法名                        说明
+
++(BOOL)objectHasSetter: propertyName:    判断对象中是否存在某个属性set方法
+
++(BOOL)objectHasGetter: propertyName:    判断对象中是否存在某个属性get方法
+
++(NSDictionary *)parseResponse:    字符串转化成字典
+
++(void)showToastUseMBHub: showText:    显示吐司提示
+
++(void)deleteWebCache    清楚wkwebview缓存
+
++(NSString *)getUrlParam:(NSString *)url key:(NSString *)key    获取url中key的值
+
++(BOOL)isEmpty:(NSString *)str    判断字符串是否为空
 
 # 后续。。。

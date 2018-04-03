@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MainCell.h"
+#import "WebViewVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -34,6 +35,12 @@
     
     imgView=[[UIImageView alloc] init];
     imgView.frame=CGRectMake(50, label.bottom, 300, 250);
+     __weak typeof(self) weakSelf = self;
+    imgView.onTouchTapBlock = ^(UIImageView * imageView){
+        WebViewVC *vc=[[WebViewVC alloc] init];
+        vc.url=@"http://www.weinihaigou.com/m-html/index/index.html?title=唯妮海购";
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
     [self.view addSubview:imgView];
     
     mTable = [[UITableView alloc] initWithFrame:CGRectMake(0, imgView.bottom, 300, 100) style:UITableViewStylePlain];

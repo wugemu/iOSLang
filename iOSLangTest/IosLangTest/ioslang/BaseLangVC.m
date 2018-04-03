@@ -69,7 +69,9 @@
 }
 
 -(void)goBack{
-    [self.navigationController popViewControllerAnimated:YES];
+    
+//     [self.navigationController popToRootViewControllerAnimated:YES];//返回最底部的VC
+    [self.navigationController popViewControllerAnimated:YES];//返回上一层
 }
 
 - (void)startAnimating

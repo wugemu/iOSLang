@@ -15,6 +15,10 @@
     self.model=[class new];
     return self;
 }
+-(void)initModel{
+    
+}
+
 - (void)startAnimating
 {
     if(self.delegate!=nil&&[self.delegate respondsToSelector:@selector(startAnimating)]){

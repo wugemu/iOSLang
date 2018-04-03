@@ -80,4 +80,85 @@ static AFNetworkReachabilityManager *mgr;
         mgr=nil;
     }
 }
+
+//清除wkwebView缓存
++ (void)deleteWebCache {
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
+        
+        NSSet *websiteDataTypes
+        
+        = [NSSet setWithArray:@[
+                                
+                                WKWebsiteDataTypeDiskCache,
+                                
+                                //WKWebsiteDataTypeOfflineWebApplicationCache,
+                                
+                                WKWebsiteDataTypeMemoryCache,
+                                
+                                //WKWebsiteDataTypeLocalStorage,
+                                
+                                //WKWebsiteDataTypeCookies,
+                                
+                                //WKWebsiteDataTypeSessionStorage,
+                                
+                                //WKWebsiteDataTypeIndexedDBDatabases,
+                                
+                                //WKWebsiteDataTypeWebSQLDatabases
+                                
+                                ]];
+        
+        //// All kinds of data
+        //NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+        
+        //// Date from
+        NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+        
+        //// Execute
+        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+            // Done
+            
+        }];
+        
+    } else {
+        
+        NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        
+        NSString *cookiesFolderPath = [libraryPath stringByAppendingString:@"/Cookies"];
+        
+        NSError *errors;
+        
+        [[NSFileManager defaultManager] removeItemAtPath:cookiesFolderPath error:&errors];
+    }
+    
+}
+
++(NSString*)getVersionCode{
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    version = [version stringByReplacingOccurrencesOfString:@"." withString:@""];
+    return version;
+}
++(BOOL)isEmpty:(NSString *)str{
+    if(str==nil||str.length==0){
+        return YES;
+    }
+    return NO;
+}
+//获取url中的key的值
++(NSString *)getUrlParam:(NSString *)url key:(NSString *)key{
+    //title值
+    NSArray * titleArr = [url componentsSeparatedByString:[NSString stringWithFormat:@"%@=",key]];
+    NSString * titleStr;
+    if (titleArr.count>=2)
+    {
+        titleStr = titleArr[1];
+        if ([titleStr rangeOfString:@"&"].location!=NSNotFound)
+        {
+            titleStr = [titleStr componentsSeparatedByString:@"&"][0];
+        }else{
+            titleStr = titleArr[1];
+        }
+    }
+    return titleStr;
+}
 @end

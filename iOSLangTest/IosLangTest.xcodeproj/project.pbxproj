@@ -67,6 +67,8 @@
 		40572FBA205923E100E3E5BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40572FB8205923E100E3E5BE /* LaunchScreen.storyboard */; };
 		40572FBD205923E100E3E5BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40572FBC205923E100E3E5BE /* main.m */; };
 		405AF482206A197900329335 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 405AF480206A197900329335 /* MBProgressHUD.m */; };
+		407690C420722C300032A151 /* BaseLangWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 407690C320722C300032A151 /* BaseLangWebController.m */; };
+		407690C72072337C0032A151 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 407690C62072337C0032A151 /* WebViewVC.m */; };
 		40CEE369205FB65F00DFE8A6 /* LangHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CEE368205FB65F00DFE8A6 /* LangHttp.m */; };
 		40EFEE7D2068A68F0071F505 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EFEE7C2068A68F0071F505 /* MainCell.m */; };
 /* End PBXBuildFile section */
@@ -193,6 +195,10 @@
 		40572FBC205923E100E3E5BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		405AF480206A197900329335 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		405AF481206A197900329335 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		407690C220722C300032A151 /* BaseLangWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseLangWebController.h; sourceTree = "<group>"; };
+		407690C320722C300032A151 /* BaseLangWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseLangWebController.m; sourceTree = "<group>"; };
+		407690C52072337C0032A151 /* WebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
+		407690C62072337C0032A151 /* WebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
 		40CEE325205F7F4400DFE8A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40CEE367205FB65F00DFE8A6 /* LangHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LangHttp.h; sourceTree = "<group>"; };
 		40CEE368205FB65F00DFE8A6 /* LangHttp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LangHttp.m; sourceTree = "<group>"; };
@@ -237,6 +243,8 @@
 				40EFEE7C2068A68F0071F505 /* MainCell.m */,
 				40572FB0205923E100E3E5BE /* ViewController.h */,
 				40572FB1205923E100E3E5BE /* ViewController.m */,
+				407690C52072337C0032A151 /* WebViewVC.h */,
+				407690C62072337C0032A151 /* WebViewVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -459,6 +467,8 @@
 				40269C8B205BC5D700CE5F6F /* BaseLangModel.m */,
 				40CEE367205FB65F00DFE8A6 /* LangHttp.h */,
 				40CEE368205FB65F00DFE8A6 /* LangHttp.m */,
+				407690C220722C300032A151 /* BaseLangWebController.h */,
+				407690C320722C300032A151 /* BaseLangWebController.m */,
 			);
 			path = ioslang;
 			sourceTree = "<group>";
@@ -573,6 +583,7 @@
 				401EA57E2060DEC70073BCAB /* AFURLSessionManager.m in Sources */,
 				40572FB2205923E100E3E5BE /* ViewController.m in Sources */,
 				401EA51C2060B65C0073BCAB /* SDWebImageManager.m in Sources */,
+				407690C420722C300032A151 /* BaseLangWebController.m in Sources */,
 				401EA5812060DEC70073BCAB /* AFHTTPRequestOperation.m in Sources */,
 				401EA5252060B65C0073BCAB /* SDWebImagePrefetcher.m in Sources */,
 				401EA5842060DEC70073BCAB /* NSDictionary+RequestEncoding.m in Sources */,
@@ -608,6 +619,7 @@
 				401EA5892060DEC70073BCAB /* UIImageView+AFNetworking.m in Sources */,
 				401EA58A2060DEC70073BCAB /* UIButton+AFNetworking.m in Sources */,
 				401EA5462060B8F30073BCAB /* UIImage+scale.m in Sources */,
+				407690C72072337C0032A151 /* WebViewVC.m in Sources */,
 				401EA5292060B65C0073BCAB /* UIImageView+WebCache.m in Sources */,
 				401EA57F2060DEC70073BCAB /* AFHTTPRequestOperationManager.m in Sources */,
 				4007B716205A7AFC002C77E8 /* BaseLangPresenter.m in Sources */,
