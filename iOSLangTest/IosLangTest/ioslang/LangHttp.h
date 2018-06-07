@@ -10,5 +10,5 @@
 #import "LangHttpProtocol.h"
 #import "HttpU.h"
 @interface LangHttp : NSObject
-+(void)requestPost:(NSString *)urlPath withParameters:(NSDictionary *)parameters withProtocol:(id<LangHttpProtocol>)delegate withTag:(int)tag;
++(void)requestPost:(NSString *)urlPath withParameters:(NSDictionary *)parameters withProtocol:(id<LangHttpProtocol>)delegate success:(void(^)(NSDictionary *dic))base_success empty:(void(^)(void))base_empty error:(void(^)(void))base_error;
 @end

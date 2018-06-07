@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol LangHttpProtocol <NSObject>
-- (void)success:(NSDictionary *)dic tag:(int)tag;
-- (void)empty:(int)tag;
-- (void)error:(int)tag;
 - (void)startAnimating;
 - (void)stopAnimating;
 @end

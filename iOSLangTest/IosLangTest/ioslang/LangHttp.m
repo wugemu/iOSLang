@@ -9,25 +9,19 @@
 #import "LangHttp.h"
 
 @implementation LangHttp
-+(void)requestPost:(NSString *)urlPath withParameters:(NSDictionary *)parameters withProtocol:delegate withTag:(int)tag{
++(void)requestPost:(NSString *)urlPath withParameters:(NSDictionary *)parameters withProtocol:delegate success:(void(^)(NSDictionary *dic))base_success empty:(void(^)(void))base_empty error:(void(^)(void))base_error{
     [delegate startAnimating];
     [HttpU requestPost:urlPath withParameters:parameters  completedBlock:^(id responseObject) {
         [delegate stopAnimating];
         NSDictionary *dic=[LangUtil parseResponse:responseObject];
         if (dic!=nil&&[dic isKindOfClass:[NSDictionary class]]) {
-            if(delegate!=nil&&[delegate respondsToSelector:@selector(success:tag:)]){
-                [delegate success:dic tag:tag];
-            }
+            base_success(dic);
         }else{
-            if(delegate!=nil&&[delegate respondsToSelector:@selector(empty:)]){
-                [delegate empty:tag];
-            }
+            base_empty();
         }
     } failureBlock:^(NSError *error) {
         [delegate stopAnimating];
-        if(delegate!=nil&&[delegate respondsToSelector:@selector(error:)]){
-            [delegate error:tag];
-        }
+        base_error();
     }];
 }
 @end

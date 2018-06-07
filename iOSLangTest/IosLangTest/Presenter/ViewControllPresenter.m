@@ -22,18 +22,15 @@
     mainmodel.array=array;
     mainmodel.tag=1;
     NSMutableDictionary *params=[[NSMutableDictionary alloc]init];
-    [LangHttp requestPost:@"http://192.168.1.1/Farm_Mobile/sysAction!queryVerNew.action" withParameters:params withProtocol:self withTag:10];
-}
-- (void)success:(NSDictionary *)dic tag:(int)tag{
-    mainmodel.name=dic[@"message"];
-    [array addObject:@"22222"];
-    mainmodel.array=array;
-    mainmodel.tag=2;
-}
-- (void)empty:(int)tag{
-    
-}
-- (void)error:(int)tag{
-    mainmodel.tag=3;
+    [LangHttp requestPost:@"http://192.168.1.1/Farm_Mobile/sysAction!queryVerNew.action" withParameters:params withProtocol:self success:^(NSDictionary *dic) {
+        mainmodel.name=dic[@"message"];
+        [array addObject:@"22222"];
+        mainmodel.array=array;
+        mainmodel.tag=2;
+    } empty:^{
+        
+    } error:^{
+        mainmodel.tag=3;
+    }];
 }
 @end
